@@ -49,7 +49,8 @@ RCT_EXPORT_METHOD(zip:(NSString *)zipPath
 
     [self zipArchiveProgressEvent:0 total:1]; // force 0%
 
-    BOOL success = [SSZipArchive createZipFileAtPath:destinationPath withContentsOfDirectory:zipPath];
+//    BOOL success = [SSZipArchive createZipFileAtPath:destinationPath withContentsOfDirectory:zipPath];
+     BOOL success = [SSZipArchive createZipFileAtPath:destinationPath withFilesAtPaths:@[zipPath]];
 
     [self zipArchiveProgressEvent:1 total:1]; // force 100%
 
